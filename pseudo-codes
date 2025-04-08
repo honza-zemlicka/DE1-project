@@ -1,0 +1,48 @@
+odpočet času jako: countdown_time()
+
+min = 5
+sec = 0
+
+for min, min == 0, min--
+{
+	min--	// 4
+	sec = 60
+}
+
+for sec, sec == 0, sec--
+{
+	sec--
+	// disp(min, sec)
+	delay(1s)
+	// ! zkontrolovat počáteční a koncovou hodnotu - 4:59 -> ... 4:01 -> 4:00 -> end for !
+}
+
+// pro stop, skip a reset tlačítko buď přidat přerušení nebo hodit do for sec (podržení tlačítka déle než 1s kvůli delay)
+
+---------------------------
+
+přepínání mezi pauzou a učením:
+
+pomodoro_time = 25
+short_pause = 5
+long_pause = 15
+
+phase = 1
+
+// pomodoro_time - short_pause - pomodoro_time - long_pause -> loop
+
+while(1)
+{
+	switch (phase):
+
+		case 1, 3:
+			time = pomodoro_time;
+		case 2:
+			time = short_pause;
+		case 4:
+			time = long_pause;
+
+	countdown_time(time)	// funkce pro odpočet času
+	phase++
+
+}
