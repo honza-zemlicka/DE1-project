@@ -1,3 +1,5 @@
+--pro přepsání do VHDL--
+
 odpočet času jako: countdown_time()
 
 min = 5
@@ -5,7 +7,7 @@ sec = 0
 
 for min, min == 0, min--
 {
-	min--	// 4
+	min--
 	sec = 60
 }
 
