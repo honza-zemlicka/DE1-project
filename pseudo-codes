@@ -19,7 +19,7 @@ for sec, sec == 0, sec--
 	// ! zkontrolovat počáteční a koncovou hodnotu - 4:59 -> ... 4:01 -> 4:00 -> end for !
 }
 
-// pro stop, skip a reset tlačítko buď přidat přerušení nebo hodit do for sec (podržení tlačítka déle než 1s kvůli delay)
+// pro pause, skip a reset tlačítko buď přidat přerušení nebo hodit do for sec (podržení tlačítka déle než 1s kvůli delay)
 // UPDATE místo delay počítat hrany hodin a kontrolovat tlačítka
 
 ---------------------------
