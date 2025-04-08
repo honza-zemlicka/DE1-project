@@ -51,3 +51,8 @@ while(1)
 	phase++
 
 }
+
+
+--------------------
+
+celé blbě, všechny procesy jedou naráz, ne postupně
