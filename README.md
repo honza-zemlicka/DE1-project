@@ -5,9 +5,11 @@
 * Hana Štěrbová
 * Martin Zatloukal
 * Jan Žemlička
-### Abstract
 
-An abstract is a short summary of your project, usually about a paragraph (6-7 sentences, 150-250 words) long. A well-written abstract serves multiple purposes: (a) an abstract lets readers get the gist or essence of your project quickly; (b) an abstract prepares readers to follow the detailed information, description, and results in your report; (c) and, later, an abstract helps readers remember key points from your project.
+### Abstract
+This project focuses on creating a simple [pomodoro timer](https://pomofocus.io/) with FPGA board. Pomodoro technique is a time management method that breaks work times into intervals (usually 25 minutes long), followed by short breaks (5 minutes long). After 4 working intervals a long, 15 minute break, follows. This technique is used to improve focus & productivity by balancing working intervals with regular rest times.
+
+Our project aims to have two modes - classic & custom. Classic mode will use default timer settings of 25-5-15. With custom mode, the user will be able to set up their own time intervals using switches.
 
 The main contributions of the project are:
 
