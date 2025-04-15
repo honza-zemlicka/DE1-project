@@ -43,8 +43,8 @@ port map(  EN      => '1',
            mux_out => AN_IN);
 
 DISP : bin2seg
-port map(  clear => open --'0'
-           bin => num
+port map(  clear => open, --'0'
+           bin => num,
            seg(6) => CA,
            seg(5) => CB,
            seg(4) => CC,
