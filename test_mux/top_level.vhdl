@@ -38,7 +38,7 @@ begin
 
 MUX : mux_4_seg_v1_1
 port map(  EN      => '1',
-           mux_RST =>,
+           mux_RST => '0',
            clk     => CLK100MHZ,
            mux_out => AN_IN);
 
