@@ -34,19 +34,19 @@ process(clk, mux_RST)
             mux_out <= "11110111";
         if EN = '1' then
             next_state <= s1;
-        end if
+        end if;
 
         when s1 =>
             mux_out <= "11111011";
         if EN = '1' then
             next_state <= s2;
-        end if
+        end if;
 
         when s2 =>
             mux_out <= "11111101";
         if EN = '1' then
             next_state <= s2;
-        end if
+        end if;
 
         when s3 =>
             mux_out <= "11111110";
