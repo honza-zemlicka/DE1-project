@@ -1,0 +1,31 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Wed Apr 16 15:24:15 2025
+# Process ID: 9632
+# Current directory: C:/Users/256608/Documents/DE1/Project/DE1-project/589v01/DE1_Project_589_V2
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent2904 C:\Users\256608\Documents\DE1\Project\DE1-project\589v01\DE1_Project_589_V2\DE1_Project_589_V1.xpr
+# Log file: C:/Users/256608/Documents/DE1/Project/DE1-project/589v01/DE1_Project_589_V2/vivado.log
+# Journal file: C:/Users/256608/Documents/DE1/Project/DE1-project/589v01/DE1_Project_589_V2\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/256608/Documents/DE1/Project/DE1-project/589v01/DE1_Project_589_V2/DE1_Project_589_V1.xpr
+update_compile_order -fileset sources_1
+save_project_as projectiiiikkkkkkkasda C:/Users/256608/Documents/DE1/Project/DE1-project/projectiiiikkkkkkkasda -force
+file mkdir C:/Users/256608/Documents/DE1/Project/DE1-project/projectiiiikkkkkkkasda/projectiiiikkkkkkkasda.srcs/sim_1/new
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open C:/Users/256608/Documents/DE1/Project/DE1-project/projectiiiikkkkkkkasda/projectiiiikkkkkkkasda.srcs/sim_1/new/tb.vhd w ]
+add_files -fileset sim_1 C:/Users/256608/Documents/DE1/Project/DE1-project/projectiiiikkkkkkkasda/projectiiiikkkkkkkasda.srcs/sim_1/new/tb.vhd
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+launch_simulation
+launch_simulation
+source top_level_tb.tcl
+close_sim
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+source top_level_tb.tcl
+close_sim
