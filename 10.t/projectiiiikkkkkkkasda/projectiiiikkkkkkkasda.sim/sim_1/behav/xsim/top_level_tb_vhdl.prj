@@ -1,0 +1,11 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../projectiiiikkkkkkkasda.srcs/sources_1/new/bin2seg.vhd" \
+"../../../../projectiiiikkkkkkkasda.srcs/sources_1/new/clock_en.vhd" \
+"../../../../projectiiiikkkkkkkasda.srcs/sources_1/new/countdown_timer.vhd" \
+"../../../../projectiiiikkkkkkkasda.srcs/sources_1/new/mux_4_seg.vhd" \
+"../../../../projectiiiikkkkkkkasda.srcs/sources_1/new/top_level.vhd" \
+"../../../../projectiiiikkkkkkkasda.srcs/sim_1/new/tb.vhd" \
+
+# Do not sort compile order
+nosort
