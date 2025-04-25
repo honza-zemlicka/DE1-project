@@ -96,9 +96,9 @@ port map(
 pomodoro_timer : pomodoro
     port map (
         clk100MHz => CLK100MHZ,
-        A => SIG_BTNC,
+        A => SIG_BTNL,
         B => SIG_BTNR,
-        C => SIG_BTNL,
+        C => SIG_BTNC,
         MM => MM_sig,
         SS => SS_sig,
         LED16_B   => LED16_B,

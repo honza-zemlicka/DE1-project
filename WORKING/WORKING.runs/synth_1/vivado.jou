@@ -2,11 +2,11 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Fri Apr 25 10:35:11 2025
-# Process ID: 1328
-# Current directory: C:/Users/256609/Documents/plspls/plspls.runs/synth_1
+# Start of session at: Fri Apr 25 11:10:15 2025
+# Process ID: 14764
+# Current directory: C:/Users/256609/Documents/DE1-project/WORKING/WORKING.runs/synth_1
 # Command line: vivado.exe -log top_level.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_level.tcl
-# Log file: C:/Users/256609/Documents/plspls/plspls.runs/synth_1/top_level.vds
-# Journal file: C:/Users/256609/Documents/plspls/plspls.runs/synth_1\vivado.jou
+# Log file: C:/Users/256609/Documents/DE1-project/WORKING/WORKING.runs/synth_1/top_level.vds
+# Journal file: C:/Users/256609/Documents/DE1-project/WORKING/WORKING.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source top_level.tcl -notrace
