@@ -13,7 +13,7 @@ This project focuses on creating a simple [pomodoro timer](https://pomofocus.io/
 
 ![Project poster](images/poster.png "A3 project poster")
 
-[Video demonstration of our project](https://youtu.be/NcyMTQrKaDQ)
+[**Video demonstration of our project**](https://youtu.be/NcyMTQrKaDQ)
 
 ## Hardware description of demo application
 

@@ -18,7 +18,6 @@ architecture behavioral of BinTo7seg is
 
 	signal POS_reg : unsigned(2 downto 0) := (others => '0');
 
-	constant n7SegDisp : integer := 4;
 	constant MILISECOND_TC : natural := 25_000;
 
 	signal clk_counter : natural range 0 to MILISECOND_TC - 1 := 0;
