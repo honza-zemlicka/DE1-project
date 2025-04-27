@@ -65,14 +65,11 @@ architecture behavioral of top_level is
 	end component debounce;
 
 	-- signals for buttons
-	signal SIG_OPEN : std_logic;
 	signal SIG_BTNC : std_logic;
 	signal SIG_BTNR : std_logic;
 	signal SIG_BTNL : std_logic;
 
 	-- Mode signal
-	signal SIG_MODE : std_logic_vector(1 downto 0);
-
 	signal MM_sig : std_logic_vector(7 downto 0);
 	signal SS_sig : std_logic_vector(7 downto 0);
 
@@ -111,9 +108,9 @@ begin
 		clk     => CLK100MHZ,
 		btn_in  => BTNC,
 		btn_out => SIG_BTNC,
-		edge    => SIG_OPEN,
-		rise    => SIG_OPEN,
-		fall    => SIG_OPEN
+		edge    => open,
+		rise    => open,
+		fall    => open
 	);
 
 	Debounce_BTNR : debounce
@@ -121,9 +118,9 @@ begin
 		clk     => CLK100MHZ,
 		btn_in  => BTNR,
 		btn_out => SIG_BTNR,
-		edge    => SIG_OPEN,
-		rise    => SIG_OPEN,
-		fall    => SIG_OPEN
+		edge    => open,
+		rise    => open,
+		fall    => open
 	);
 
 	Debounce_BTNL : debounce
@@ -131,9 +128,9 @@ begin
 		clk     => CLK100MHZ,
 		btn_in  => BTNL,
 		btn_out => SIG_BTNL,
-		edge    => SIG_OPEN,
-		rise    => SIG_OPEN,
-		fall    => SIG_OPEN
+		edge    => open,
+		rise    => open,
+		fall    => open
 	);
 
 	DP <= '1';
