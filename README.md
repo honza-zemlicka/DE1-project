@@ -1,4 +1,4 @@
-# DE1-project
+# DE1 Timer project
 ### Team members
 
 * Vojtěch Šafařík (responsible for coding, simulations & poster creation)
@@ -7,15 +7,13 @@
 * Jan Žemlička (responsible for managing GitHub repository & video description)
 
 ### Abstract
-This project focuses on creating a simple [pomodoro timer](https://pomofocus.io/) with FPGA board. Pomodoro technique is a time management method that breaks your work into intervals (usually 25 minutes long), followed by short breaks (5 minutes long). After 4 working intervals a longer break follows (15 minutes). This technique is used to improve focus & productivity by balancing working intervals with regular rest times.
-
-Our project aims to implement this simple timer onto Nexys A7-50T board.
+This project focuses on creating a simple [pomodoro timer](https://pomofocus.io/) with Nexys A7-50T FPGA board. Pomodoro technique is a time management method that breaks your work into intervals (usually 25 minutes long), followed by short breaks (5 minutes long). After 4 working intervals a longer break follows (15 minutes). This technique is used to improve focus & productivity by balancing working intervals with regular rest times.
 
 [Photo(s) of your application with labels of individual parts.]
 
-[Link to A3 project poster.]
+![Project poster](images/poster.png "A3 project poster")
 
-[Optional link to video presentatioin.]
+[Video demonstration of our project](https://youtu.be/NcyMTQrKaDQ)
 
 ## Hardware description of demo application
 
@@ -31,5 +29,6 @@ Write descriptive text and put simulation screenshots of components you created 
 
 ## References
 
-1. Put here the references and online tools you used.
-2. ...
+- https://en.wikipedia.org/wiki/Pomodoro_Technique
+- https://pomofocus.io/
+- https://github.com/tomas-fryza/vhdl-labs
