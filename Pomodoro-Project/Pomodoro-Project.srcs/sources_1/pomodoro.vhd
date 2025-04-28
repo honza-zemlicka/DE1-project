@@ -27,8 +27,8 @@ architecture Behavioral of pomodoro is
 	constant SHORT_BREAK_MINUTES : integer := 5;
 	constant LONG_BREAK_MINUTES : integer := 15;
 
-	signal s_minuty : integer range 0 to 59 := 0;
-	signal s_sekundy : integer range 0 to 59 := 0;
+	signal s_minutes : integer range 0 to 59 := 0;
+	signal s_seconds : integer range 0 to 59 := 0;
 
 	signal preview_minutes : integer range 0 to 59 := WORK_MINUTES;
 
@@ -103,16 +103,16 @@ begin
 
 					case next_state is
 						when work =>
-							s_minuty <= WORK_MINUTES;
+							s_minutes <= WORK_MINUTES;
 						when short_break =>
-							s_minuty <= SHORT_BREAK_MINUTES;
+							s_minutes <= SHORT_BREAK_MINUTES;
 						when long_break =>
-							s_minuty <= LONG_BREAK_MINUTES;
+							s_minutes <= LONG_BREAK_MINUTES;
 						when others =>
-							s_minuty <= 0;
+							s_minutes <= 0;
 					end case;
 
-					s_sekundy <= 0;
+					s_seconds <= 0;
 				else
 					is_running <= not is_running;
 				end if;
@@ -120,7 +120,7 @@ begin
 
 			-- Countdown
 			if second_tick = '1' and is_running = '1' then
-				if s_minuty = 0 and s_sekundy = 0 then
+				if s_minutes = 0 and s_seconds = 0 then
 					case state is
 						when work =>
 							if work_counter = 3 then
@@ -137,11 +137,11 @@ begin
 					state <= idle;
 					is_running <= '0';
 				else
-					if s_sekundy = 0 then
-						s_sekundy <= 59;
-						s_minuty <= s_minuty - 1;
+					if s_seconds = 0 then
+						s_seconds <= 59;
+						s_minutes <= s_minutes - 1;
 					else
-						s_sekundy <= s_sekundy - 1;
+						s_seconds <= s_seconds - 1;
 					end if;
 				end if;
 			end if;
@@ -166,9 +166,9 @@ begin
 	-- Time outputs
 	MM <= std_logic_vector(to_unsigned(
 		preview_minutes, 8)) when state = idle else
-		std_logic_vector(to_unsigned(s_minuty, 8));
+		std_logic_vector(to_unsigned(s_minutes, 8));
 
 	SS <= (others => '0') when state = idle else
-		std_logic_vector(to_unsigned(s_sekundy, 8));
+		std_logic_vector(to_unsigned(s_seconds, 8));
 
 end Behavioral;
