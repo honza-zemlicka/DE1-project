@@ -1,4 +1,5 @@
 # DE1 Timer project
+
 ### Team members
 
 * Vojtěch Šafařík (responsible for coding, simulations & poster creation)
@@ -11,13 +12,13 @@ This project focuses on creating a simple [pomodoro timer](https://pomofocus.io/
 
 [Photo(s) of your application with labels of individual parts.]
 
-![Project poster](images/poster.png "A3 project poster")
-
 [**Video demonstration of our project**](https://youtu.be/NcyMTQrKaDQ)
+
+![Project poster](images/poster.png "A3 project poster")
 
 ## Hardware description of demo application
 
-Describe your implementation. Put a descriptive top-level schematic of your application.
+When launching the device, the user finds themselves in idle mode, indicated by LED16 which lights up blue. 
 
 ## Software description
 
