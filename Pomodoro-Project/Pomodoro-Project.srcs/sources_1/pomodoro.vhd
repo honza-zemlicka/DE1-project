@@ -123,7 +123,7 @@ begin
 				if s_minuty = 0 and s_sekundy = 0 then
 					case state is
 						when work =>
-							if work_counter = 2 then
+							if work_counter = 3 then
 								next_state <= long_break;
 								work_counter <= 0;
 							else
