@@ -49,9 +49,34 @@ The VHDL code consists of several entities:
 ### Top level diagram
 ![Toplevel diagram](images/diagram.jpg "Top level diagram")
 
-### Component(s) simulations
+### Components simulations
 
-**TBD MARTINE RIIGHT**
+*Note: testbenches were created in an edited version of project for simulation purposes (changed clk times, ...)*
+
+Simulated waveforms of pomodoro module using [tb_pomodoro](...) testbench.
+
+![Pomodorosim](images/tb_pomodoro.png "Pomodoro simulation")
+
+> Here we can see how the timer (and LED) reacts to reset (A), start/pause/resume (B) and skip inputs (C). Applying short pulse to B input starts the timer, as a result, timer is subtracting (descending values of MM and SS) and LED16_R is active. By applying the pulse again to B input we can see how the timer stops/resumes. Applying pulse to C skips to the idle phase before next interval (MM & SS value change to preview next interval & LED16_B is active). Applying pulse to A resets the whole timer to default state.
+
+Simulated waveforms of BinTo7seg module using [tb_7seg](...) testbench.
+
+![7segsim](images/tb_7seg.png "Bin2Seg simulation")
+
+> In this simulation we can observe how the display multiplexing logic reacts to changes of binary inputs for MM and SS. For purposes of this testbench they were set to 01:02 and later on to 03:04 (in decimal). As the digit position counter cycles through values (visible as active-low bits in POS_OUT), we observe corresponding digit selection and segment output. When the rightmost digit (POS_OUT = 11111011) is active, SS units (2) are displayed — seg = 0010010. As POS_OUT moves left, the next digits are shown: SS tens (0 -> seg = 00000001), MM units (1 -> seg = 1001111), and MM tens (0). The same cycle follows for next phase (03:04).
+
+Simulated waveforms of Top level module using [tb_top](...) testbench.
+
+![toplevelsim](images/tb_toplevel.png "Top level simulation")
+
+> In the picture above, we can see the LED and the individual cathodes of the 7-segment display reacting to the button inputs. The default idle mode (indicated by LED16_B) is switched upon pressing the center button to a work mode indicated by a LED16_R, which also starts the countdown, indicated by the individual cathodes. The following presses of the center button pause and resume the countdown (pause is indicated by no active LED), after which the right button, BTNR, skips the work mode into the following idle mode, after which a short break follows. The short break is also launched by BTNC. The BTNL restarts the top_level into the default idle mode again. At the bottom, we can see active AN[5:2], which stands for the 4 active center displays of the FPGA used for the project implementation. 
+
+*Debounce module is unchanged from the one used in DE1 labs.*
+
+## Possible improvements
+
+- Custom time interval mode using switches to set time values
+- Some kind of an audio output when an interval ends
 
 ## References
 
