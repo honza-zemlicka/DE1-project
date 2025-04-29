@@ -16,23 +16,23 @@ This project focuses on creating a simple [pomodoro timer](https://pomofocus.io/
 
 ## Hardware description of demo application
 
-When launching the device, the user finds themselves in idle mode, indicated by LED16 emmiting blue colour. Upon pressing BTNC, the first working interval starts.
+When launching the device, the user finds themselves in idle mode, indicated by LED16 emmiting blue colour. Upon pressing BTNC, the first working interval starts (LED16 emits red). If the user wishes to pause the current timer interval, they can do so by pressing BTNC again - LED16 turns off. When the working interval ends (or user skips the interval by pressing BTNR)
 
 ## Software description
 
 The VHDL code consists of several entities:
 
 - [**Pomodoro**](Pomodoro-Project/Pomodoro-Project.srcs/sources_1/pomodoro.vhd) module
-    - The pomodoro module controls the timer logic. Once started, it counts down a preset time interval (25 minutes of work) and automatically transitions into an idle state. The user then can start their break period (5 or 15 minutes, depending on *work_counter* value). It allows starting, pausing, resetting, and switching between work and break phases via buttons. Outputs of the module are the current minutes (*MM*) and seconds (*SS*) for display, and LED signals to indicate the current phase (work, break, or idle). It is driven by the main 100 MHz clock from onboard crystal oscillator, with internal generation of 1-second ticks.
+    - The pomodoro module controls the timer logic. Internally, it uses an counter to generate 1 Hz pulses (*in demo application we generate 20 Hz pulses for presentation purposes*) from a 100 MHz onboard oscillator, allowing second-based countdown. State transitions (work - idle - break) are controlled by a FSM, which responds to debounced button inputs to start, pause, reset, or switch phases. The module tracks session progress via a *work_counter*, switching between short (5 min) and long (15 min) breaks after every fourth work session. Outputs include current time in BCD format (*MM, SS*) and RGB LED16 indicates the current state (work, break, idle, timer stopped).
 
 - [**BinTo7seg**](Pomodoro-Project/Pomodoro-Project.srcs/sources_1/7seg.vhd) module
-    - The BinTo7seg module converts two 8-bit binary values (minutes and seconds) into corresponding digits for a 4-digit 7-segment display. It implements digit selection, multiplexing, and digit-to-segment conversion using a synchronized clock signal. The module generates signal to cycle through digits approximately every 1 ms, ensuring a stable visual output. Segment and position outputs are active low.
+    - The BinTo7seg module converts two binary inputs (representing minutes and seconds) into digits displayed on a 4-digit 7-segment display using multiplexing. It includes a 250 µs clock divider that generates enable pulses for a 3-bit position counter, which sequentially selects which digit to display. At each active position, the appropriate decimal digit is extracted from the MM or SS variable, and then mapped to a 7-segment encoding. The full 4-digit multiplexing cycle completes every 1 ms.
 
 - [**Debounce**](Pomodoro-Project/Pomodoro-Project.srcs/sources_1/debounce.vhd) module
-    - The debounce module filters mechanical bounce from button inputs and synchronizes them with the clk signal. It uses a two-stage synchronizer and a counter to verify the button state stability over 25 ms long debounce time. The module also generates signals for edge detection, including rise and fall events, which can be used to detect button presses and releases.
+    - The debounce component used here is originally from [DE1 VHDL course](https://raw.githubusercontent.com/tomas-fryza/vhdl-labs/refs/heads/master/examples/_debounce/debounce.vhd). It filters noisy mechanical button inputs using a 2-bit synchronizer and a time counter (25 ms). The logic checks for consistent high/low values across that duration before updating the internal debounced signal. The module detects signal transitions using XOR logic between the synchronized input and the stable signal.
 
 - [**Top level**](Pomodoro-Project/Pomodoro-Project.srcs/sources_1/top_level.vhd)
-    - The top_level module connects the timer, display driver, and debounced button inputs into one functional system. It manages the flow of signals between the Pomodoro timer core, the BinTo7seg display converter, and user operated buttons. The top module prepares the outputs for LEDs and the 7-segment display, creating a working timer system.
+    - The top_level module instantiates the pomodoro, BinTo7seg, and debounce modules and connects them via internal signals. The push buttons are routed through debouncing logic before controlling the timer's FSM. The BinTo7seg converter handles 7-segment output and digit selection for displaying the current countdown. RGB LED outputs reflect the active timer phase.
 
 ### Top level diagram
 ![Toplevel diagram](images/diagram.jpg "Top level diagram")
@@ -46,3 +46,6 @@ The VHDL code consists of several entities:
 - https://en.wikipedia.org/wiki/Pomodoro_Technique
 - https://pomofocus.io/
 - https://github.com/tomas-fryza/vhdl-labs
+- https://miro.com/
+- https://vhdl.lapinoo.net/
+- https://chatgpt.com/
