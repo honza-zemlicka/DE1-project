@@ -16,7 +16,19 @@ This project focuses on creating a simple [pomodoro timer](https://pomofocus.io/
 
 ## Hardware description of demo application
 
-When launching the device, the user finds themselves in idle mode, indicated by LED16 emmiting blue colour. Upon pressing BTNC, the first working interval starts (LED16 emits red). If the user wishes to pause the current timer interval, they can do so by pressing BTNC again - LED16 turns off. When the working interval ends (or user skips the interval by pressing BTNR)
+The user controls the timer using three buttons and can recognize the current mode by observing LED16, which changes color for each mode. Upon powering on the device, the user starts in **idle mode**, indicated by LED16 emitting a **blue** light and the 7-segment displays showing the next interval (25 minutes). Pressing **BTNC** starts the first **work interval** (LED16 turns **red**). If the user wishes to pause or resume the current interval, they can press BTNC again — the LED turns off during pause. When an interval ends, the timer awaits user input to proceed. Pressing BTNC again starts the next mode, in this case, a short break, indicated by the LED turning green. The user may **skip the current phase** and enter idle mode immediately by pressing **BTNR**, regardless of whether the current interval has finished.Additionally, the user can also **reset the timer** to its default state — the work interval count is reset to 0, and the next interval becomes a 25-minute work session — by pressing **BTNL**.
+
+![Work interval](images/IMG_1053.jpg "Work interval")
+> Running work interval, indicated by red colour.
+
+![Pause](images/IMG_1054.jpg "Paused timer")
+> Paused timer, LED16 is turned off.
+
+![Idle state](images/IMG_1055.jpg "Idle state")
+> Timer is in idle state, indicated by blue colour. 7-segment displays are previewing the time of the next interval.
+
+![Break interval](images/IMG_1056.jpg "Break interval")
+> Running break interval, indicated by green colour. 
 
 ## Software description
 
