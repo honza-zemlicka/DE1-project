@@ -57,7 +57,7 @@ Simulated waveforms of pomodoro module using [tb_pomodoro](...) testbench.
 
 ![Pomodorosim](images/tb_pomodoro.png "Pomodoro simulation")
 
-> Here we can see how the timer (and LED) reacts to reset (A), start/pause/resume (B) and skip inputs (C). Applying short pulse to B input starts the timer, as a result, timer is subtracting (descending values of MM and SS) and LED16_R is active. By applying the pulse again to B input we can see how the timer stops/resumes. Applying pulse to C skips to the idle phase before next interval (MM & SS value change to preview next interval & LED16_B is active). Applying pulse to A resets the whole timer to default state.
+> Here we can see how the timer (and LED) reacts to reset (A), start/pause/resume (B) and skip inputs (C). Applying short pulse to B input starts the timer, as a result, timer is subtracting (descending values of MM and SS) and LED16_R is active. By applying the pulse again to B input we can see how the timer stops (LED16 is off) or resumes. Applying pulse to C skips to the idle phase before next interval (MM & SS value change to preview next interval & LED16_B is active). Applying pulse to A resets the whole timer to default state.
 
 Simulated waveforms of BinTo7seg module using [tb_7seg](...) testbench.
 
