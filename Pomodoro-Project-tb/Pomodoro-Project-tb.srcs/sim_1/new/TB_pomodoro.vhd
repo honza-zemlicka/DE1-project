@@ -46,7 +46,6 @@ begin
             LED16_G   => LED16_G
         );
 
-    -- Hodiny 100 MHz, běží 1 ms
     CLK100MHZ_process : process
     begin
         while now < 170 us loop
