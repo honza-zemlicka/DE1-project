@@ -43,7 +43,7 @@ begin
 	begin
 		if rising_edge(clk) then 
 			if milisecond_tick = '1' then 
-				if POS_reg = 5 then
+				if POS_reg = 3 then
 					POS_reg <= (others => '0');
 				else
 					POS_reg <= POS_reg + 1;
