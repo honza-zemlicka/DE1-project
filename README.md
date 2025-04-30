@@ -51,21 +51,21 @@ The VHDL code consists of several entities:
 
 ### Components simulations
 
-*Note: testbenches were created in an edited version of project for simulation purposes (changed clk times, ...)*
+*Note: testbenches were created in an edited version of project for simulation purposes (changed clk times for shorter simulations, etc.)*
 
-Simulated waveforms of pomodoro module using [tb_pomodoro](...) testbench.
+Simulated waveforms of pomodoro module using [tb_pomodoro](Pomodoro-Project-tb/Pomodoro-Project-tb.srcs/sim_1/new/TB_pomodoro.vhd) testbench.
 
 ![Pomodorosim](images/tb_pomodoro.png "Pomodoro simulation")
 
 > Here we can see how the timer (and LED) reacts to reset (A), start/pause/resume (B) and skip inputs (C). Applying short pulse to B input starts the timer, as a result, timer is subtracting (descending values of MM and SS) and LED16_R is active. By applying the pulse again to B input we can see how the timer stops (LED16 is off) or resumes. Applying pulse to C skips to the idle phase before next interval (MM & SS value change to preview next interval & LED16_B is active). Applying pulse to A resets the whole timer to default state.
 
-Simulated waveforms of BinTo7seg module using [tb_7seg](...) testbench.
+Simulated waveforms of BinTo7seg module using [tb_7seg](Pomodoro-Project-tb/Pomodoro-Project-tb.srcs/sim_1/new/TB_7seg.vhd) testbench.
 
 ![7segsim](images/tb_7seg.png "Bin2Seg simulation")
 
 > In this simulation we can observe how the display multiplexing logic reacts to changes of binary inputs for MM and SS. For purposes of this testbench they were set to 01:02 and later on to 03:04 (in decimal). As the digit position counter cycles through values (visible as active-low bits in POS_OUT), we observe corresponding digit selection and segment output. When the rightmost digit (POS_OUT = 11111011) is active, SS units (2) are displayed — seg = 0010010. As POS_OUT moves left, the next digits are shown: SS tens (0 -> seg = 00000001), MM units (1 -> seg = 1001111), and MM tens (0). The same cycle follows for next phase (03:04).
 
-Simulated waveforms of Top level module using [tb_top](...) testbench.
+Simulated waveforms of Top level module using [tb_top](Pomodoro-Project-tb/Pomodoro-Project-tb.srcs/sim_1/new/TB_top_level.vhd) testbench.
 
 ![toplevelsim](images/tb_toplevel.png "Top level simulation")
 
@@ -76,7 +76,7 @@ Simulated waveforms of Top level module using [tb_top](...) testbench.
 ## Possible improvements
 
 - Custom time interval mode using switches to set time values
-- Some kind of an audio output when an interval ends
+- An audio cue when an interval ends
 
 ## References
 
